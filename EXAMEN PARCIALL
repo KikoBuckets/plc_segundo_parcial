@@ -1,0 +1,21 @@
+temperatura = float(input("Temperatura en grados Celsius: "))
+humedad = float(input("Humedad en porcentaje: "))
+dia = input("Día de la semana: ").capitalize()
+
+if temperatura < 20:
+    print("Llevarla adentro de la casa")
+elif 20 <= temperatura <= 25:
+    print("Buenas condiciones")
+else:
+    print("Llevarla adentro de la casa y encender el ventilador")
+
+if dia in ["Martes", "Jueves", "Sábado"]:
+    print("Regar a Rubí")
+elif humedad < 20:
+    print("Debes regar a Rubí")
+elif 20 <= humedad <= 22:
+    print("Humedad adecuada")
+elif humedad > 22 and dia in ["Lunes", "Miércoles", "Viernes", "Domingo"]:
+    print("No es necesario regar a Rubí")
+else:
+    print("No es un día de riego")
