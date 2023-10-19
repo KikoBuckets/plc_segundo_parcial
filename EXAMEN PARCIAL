@@ -1,0 +1,30 @@
+
+temperatura_ambiente = float(input("Ingrese la temperatura ambiente en grados Celsius: "))
+humedad_ambiente = float(input("Ingrese el porcentaje de humedad en el aire alrededor de Rubí: "))
+dia_semana = input("Ingrese el día de la semana actual: ").capitalize()
+
+def es_dia_de_riego(dia):
+    return dia in ["Martes", "Jueves", "Sábado"]
+
+def cuidar_rubi(temperatura, humedad, dia):
+    if temperatura < 20:
+        print("Llevarla adentro de la casa")
+    elif 20 <= temperatura <= 25:
+        print("Buenas condiciones")
+    else:
+        print("Llevarla adentro de la casa y encender el ventilador")
+
+    if es_dia_de_riego(dia):
+        print("Regar a Rubí")
+    elif humedad < 20:
+        print("Debes regar a Rubí")
+    elif humedad >= 20 and humedad <= 22:
+        print("Humedad adecuada")
+    elif humedad > 22 and dia in ["Lunes", "Miércoles", "Viernes", "Domingo"]:
+        print("No es necesario regar a Rubí")
+    else:
+        print("No es un día de riego")
+
+# Llamar a la función para cuidar a Rubí con los datos ingresados
+cuidar_rubi(temperatura_ambiente, humedad_ambiente, dia_semana)
+
